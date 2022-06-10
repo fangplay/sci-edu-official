@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Bootstrap Style Color yellow-->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/node_modules/popper.js/dist/popper.js"></script>
+    <!--add script on this file-->
+    <script src="/script/add-event.js"></script>
+    <title>Add Course Event</title>
+</head>
+<body>
+
+    <!-- Grey with black text -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="#">SCI-EDU</a>
+          <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+          <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="mainpage.html">HOME
+                      <span class="sr-only"></span>
+                    </a>
+              </li>
+              <li class="nav-item active">
+                    <a class="nav-link" href="add-event.php">NEW PROJECT</a>
+              </li>
+              <li class="nav-item">
+                    <a class="nav-link" href="edit-event.php">EDIT PROJECT</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="staff-login.php">STAFF SESSION</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="about.html">ABOUT</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <!--Header-->
+    <header>
+            <div class="container" align="center">
+                <h1 class="display-4">ADD REQUEST COURSE</h1>
+            </div>
+    </header>
+
+    <form name="request-course" method="POST" action="request-data.php">
+    <div class="form-group row">
+        <legend class="col-from-lebel col-sm-5 pt-0 text-right">ชื่อโครงการ</legend>
+        <div class="col">
+            <input type="text" name="project-name" id="project-name">
+        </div>
+    </div>
+    
+        <div class="form-group row">
+            <legend class="col-form-label col-sm-5 pt-0 text-right">ชื่อโรงเรียน</legend>
+            <div class="col">
+                <input type="text" name="shcool-name">
+            </div>
+        </div>
+        <!--div class="form-group row">
+            <legend class="col-form-label col-sm-5 pt-0 text-right">ชื่อสถาบัน</legend>
+            <d--iv class="col">
+                <select name="">
+                    <option>เลือกสถาบัน</option>
+                </select>
+            </div>
+        </div-->
+        <div class="form-group row">
+            <legend class="col-form-label col-sm-5 pt-0 text-right">ระดับการศึกษา</legend>
+            <div class="form-check">
+                <input type="checkbox" name="class[]" for="early-high" id="early-high" value="early-high-school">
+                <label class="form-check-label" for="early-high">มัธยมศึกษาตอนต้น</label>
+                <!--br><input type="checkbox" name="year[]" id="m1" value="ม.1" disabled><label class="form-check-label" for="m1">ม.1</label>
+                &nbsp; &nbsp; &nbsp;<input type="checkbox" name="year[]" id="m2" value="ม.2" disabled><label class="form-check-label" for="m2">ม.2</label>
+                &nbsp; &nbsp; &nbsp;<input type="checkbox" name="year[]" id="m3" value="ม.3" disabled><label class="form-check-label" for="m3">ม.3</label-->
+                <br>
+                <input type="checkbox" name="class[]" for="high-school" id="high-school" value="high-school">
+                <label class="form-check-label" for="high-school">มัธยมศึกษาตอนปลาย</label>
+                <!--br><input type="checkbox" name="year[]" id="m4" value="ม.4"  disabled><label class="form-check-label" for="m4">ม.4</label>
+                &nbsp; &nbsp; &nbsp;<input type="checkbox" name="year[]" id="m5" value="ม.5" disabled><label class="form-check-label" for="m5">ม.5</label>
+                &nbsp; &nbsp; &nbsp;<input type="checkbox" name="year[]" id="m6" value="ม.6" disabled><label class="form-check-label" for="m6">ม.6</label-->
+            </div>
+        </div>
+        <div class="form-group row">
+            <legend class="col-form-label col-sm-5 pt-0 text-right">วิชาที่อบรม</legend>
+            <div class="col">
+                <div class="input-group">
+                    <label for="check1" class="form-check-label"><input type="checkbox" id="check1" name="subject[]" value="คณิตศาสตร์">คณิตศาสตร์</label>
+                    </div>
+                    <!--input type="text" id="type_input1" placeholder="หัวข้อที่สอน" name="header-math" disabled-->
+                    <div class="input-group">
+                    <label for="check2" class="form-check-label"><input type="checkbox" id="check2" name="subject[]" value="คอมพิวเตอร์">คอมพิวเตอร์</label>
+                    </div>
+                    <!--input type="text"id="type_input2" placeholder="หัวข้อที่สอน" name="header-com" disabled-->
+                    <div class="input-group">
+                    <label for="check3" class="form-check-label"><input type="checkbox" id="check3" name="subject[]" value="ฟิสิกส์">ฟิสิกส์</label>
+                    </div>
+                    <!--input type="text" id="type_input3" placeholder="หัวข้อที่สอน" name="header-phy" disabled-->
+                    <div class="input-group">
+                    <label for="check4" class="form-check-label"><input type="checkbox" id="check4" name="subject[]" value="เคมี">เคมี</label>
+                    </div>
+                    <!--input type="text" id="type_input4" placeholder="หัวข้อที่สอน" name="header-chem" disabled-->
+                    <div class="input-group">
+                    <label for="check5" class="form-check-label"><input type="checkbox" id="check5" name="subject[]" value="ชีววิทยา">ชีววิทยา</label>
+                    </div>
+                    <!--input type="text" id="type_input5" placeholder="หัวข้อที่สอน" name="header-bio" disabled-->
+                    <div class="input-group">
+                    <label for="check6" class="form-check-label"><input type="checkbox" id="check6" name="subject[]" value="ดาราศาสตร์">ดาราศาสตร์</label>
+                    </div>
+            </div>
+        </div>
+        <div class="from-group row">
+            <legend class="col-form-label col-sm-5 pt-0 text-right">วิทยาเขต</legend>
+            <div class="col">
+                <input type="radio" name="session" value="songkla">สงขลา<p>
+                <input type="radio" name="session" value="phatthalung">พัทลุง<p>
+            </div>
+        </div>
+        <div class="form-group row">
+            <legend class="col-form-label col-sm-5 pt-0 text-right">จำนวนนักเรียน</legend>
+            <div class="col">
+                <input type="text" name="count-student">
+            </div>
+        </div>
+        <div class="form-group row">
+            <legend class="col-form-label col-sm-5 pt-0 text-right">จำนวนครู</legend>
+            <div class="col">
+                <input type="text" name="count-teacher">
+            </div>
+        </div>
+        <div class="form-group row">
+            <legend class="col-form-label col-sm-5 pr-0 text-right">วันที่อบรม</legend>
+            <div class="col">
+                <input type="date" name="train-day1">
+                <input type="date" name="train-day2">
+            </div>
+        </div>
+        <div class="form-group row">
+            <legend class="col-form-label col-sm-5 pr-0 text-right">ชื่อผู้ติดต่อ</legend>
+            <div class="col">
+                <input type="text" name="contact-name">
+            </div>
+        </div>
+        <div class="form-group row">
+            <legend class="col-form-label col-sm-5 pr-0 text-right">อีเมลล์</legend>
+            <div class="col">
+                <input type="text" name="e-mail">
+            </div>
+        </div>
+        <div class="form-group row">
+            <legend class="col-form-label col-sm-5 pr-0 text-right">เบอร์โทรศัพท์</legend>
+            <div class="col">
+                <input type="text" name="phone-number">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-3 offset-sm-3 text-right pt-3">
+                <button type="submit" name="save" class="btn btn-primary">บันทึกข้อมูล</button>
+            </div>
+            <div class="col-sm-1 offset-sm-1 text-left pt-3">
+                <button type="reset" name="clear" class="btn btn-danger">ล้างข้อมูล</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="container" align="center">
+        <h2>Dev BetaCrossX</h2>
+    </div>
+</body>
+</html>
